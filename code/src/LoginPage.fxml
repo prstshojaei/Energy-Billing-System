@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.LoginController"
+      style="-fx-padding: 40;">
+
+    <Label text="Energy Billing System"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="tfUsername" prefWidth="250"/>
+
+    <PasswordField fx:id="pfPassword" prefWidth="250"/>
+
+    <Button text="Login" onAction="#handleLogin" prefWidth="250"/>
+
+    <Label fx:id="lblMessage" style="-fx-text-fill: red;"/>
+
+</VBox>

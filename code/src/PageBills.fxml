@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.BillsController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <top>
+        <Label text="Bills" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="tableBills">
+            <columns>
+                <TableColumn fx:id="colCustomerId" text="Customer ID"/>
+                <TableColumn fx:id="colDays" text="Days"/>
+                <TableColumn fx:id="colElec" text="Electricity (£)"/>
+                <TableColumn fx:id="colGas" text="Gas (£)"/>
+                <TableColumn fx:id="colTotal" text="Total (£)"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Button text="Refresh" onAction="#refresh"/>
+            <Button text="Mark as Paid" onAction="#markPaid"/>
+            <Button text="Delete Selected" onAction="#deleteSelected"/>
+            <Label fx:id="lblMsg" text=""/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

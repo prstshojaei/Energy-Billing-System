@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.CustomersController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <top>
+        <Label text="Customers" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+    </top>
+
+    <left>
+        <VBox spacing="8" prefWidth="260">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="0"/>
+            </padding>
+
+            <Label text="Add Customer" style="-fx-font-weight:bold;"/>
+
+            <TextField fx:id="tfName" promptText="Name"/>
+            <TextField fx:id="tfPhone" promptText="Phone"/>
+            <TextField fx:id="tfAddress" promptText="Address"/>
+
+            <Button text="Add Customer" onAction="#addCustomer" maxWidth="9999"/>
+            <Button text="Delete Selected" onAction="#deleteSelected" maxWidth="9999"/>
+
+            <Separator/>
+
+            <Button text="Save Customers" onAction="#saveToFile" maxWidth="9999"/>
+
+            <Label fx:id="lblMsg" text="" style="-fx-text-fill:darkred;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <TableView fx:id="tableCustomers">
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colName" text="Name"/>
+                <TableColumn fx:id="colPhone" text="Phone"/>
+                <TableColumn fx:id="colAddress" text="Address"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

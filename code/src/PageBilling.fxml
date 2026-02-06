@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.BillingController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <top>
+        <Label text="Billing" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+    </top>
+
+    <center>
+        <VBox spacing="12">
+
+            <!-- Top row -->
+            <HBox spacing="10">
+                <Label text="Customer ID:"/>
+                <ComboBox fx:id="cbCustomerId" prefWidth="160"/>
+                <Label text="Days:"/>
+                <TextField fx:id="tfDays" prefWidth="80"/>
+            </HBox>
+
+            <!-- Electricity section (NO TitledPane - no arrow) -->
+            <Label text="Electricity Inputs" style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+
+            <GridPane hgap="10" vgap="8">
+                <padding>
+                    <Insets top="8" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <Label text="Opening Day:" GridPane.rowIndex="0"/>
+                <TextField fx:id="tfOD" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Closing Day:" GridPane.rowIndex="1"/>
+                <TextField fx:id="tfCD" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Opening Night:" GridPane.rowIndex="2"/>
+                <TextField fx:id="tfON" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Closing Night:" GridPane.rowIndex="3"/>
+                <TextField fx:id="tfCN" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Standing (p/day):" GridPane.rowIndex="4"/>
+                <TextField fx:id="tfElecStanding" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Unit Price (p):" GridPane.rowIndex="5"/>
+                <TextField fx:id="tfElecUnit" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Separator/>
+
+            <!-- Gas section (NO TitledPane - no arrow) -->
+            <Label text="Gas Inputs" style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+
+            <GridPane hgap="10" vgap="8">
+                <padding>
+                    <Insets top="8" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <Label text="Opening:" GridPane.rowIndex="0"/>
+                <TextField fx:id="tfGasOpen" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Closing:" GridPane.rowIndex="1"/>
+                <TextField fx:id="tfGasClose" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Standing (p/day):" GridPane.rowIndex="2"/>
+                <TextField fx:id="tfGasStanding" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Unit Price (p):" GridPane.rowIndex="3"/>
+                <TextField fx:id="tfGasUnit" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Separator/>
+
+            <!-- Buttons -->
+            <HBox spacing="10">
+                <Button text="Calculate" onAction="#calculate"/>
+                <Button text="Save Bill" onAction="#saveBill"/>
+                <Label fx:id="lblMsg" text=""/>
+            </HBox>
+
+            <!-- Results -->
+            <GridPane hgap="10" vgap="8">
+                <Label text="Electricity Bill:" GridPane.rowIndex="0"/>
+                <Label fx:id="lblElecBill" text="-" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Gas Bill:" GridPane.rowIndex="1"/>
+                <Label fx:id="lblGasBill" text="-" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Total:" GridPane.rowIndex="2"/>
+                <Label fx:id="lblTotal" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,5 @@
+customerId,days,electricity,gas,total,status
+C001,33,65.18,54.22,119.4,Unpaid
+C003,33,65.18,54.22,119.4,Unpaid
+C004,33,65.18,54.22,119.4,Unpaid
+C004,33,65.18,54.22,119.4,Paid
